@@ -58,13 +58,13 @@ def strMethods(str):
 # print(sliceStr(str_op))
 #DEAL WITH FILES---------------------------------------------------------------------------------------
 import os
-print (os.path.abspath(os.curdir))
+# print (os.path.abspath(os.curdir))
 
-print(os.listdir(r"C:\Users\ahmed\CheatSheet\\"))
+# print(os.listdir(r"C:\Users\ahmed\CheatSheet\\"))
 
 error_to_catch = getattr(__builtins__,'FileNotFoundError', IOError)
 fhandle = open(r'Ammar.txt', 'r', encoding='latin-1')  # 3rd arg is the encoding mode
-print(fhandle)
+# print(fhandle)
 # try:
 #     print(fhandle.readlines())
 # except error_to_catch:
@@ -79,18 +79,18 @@ count=0
 for line in fstr:
     count+=1
 
-print("count of lines: ",count)
+# print("count of lines: ",count)
 
-print('lines --->',fstr)  #prints a list
+# print('lines --->',fstr)  #prints a list
 
-print("lines num--->  ",len(fstr))
+# print("lines num--->  ",len(fstr))
 # print('chars ---->',len(fchars))  #prints a str
-print("words --->  ",fchars.split())
+# print("words --->  ",fchars.split())
 # print("str splitting --->  ",fstr)
 # print("char splitting --->  ",fchars)
-print("manifest title --->  :",fstr[0])
-print("str words --->  ",fchars)
-print("file characters num --->  ",len(fchars))
+# print("manifest title --->  :",fstr[0])
+# print("str words --->  ",fchars)
+# print("file characters num --->  ",len(fchars))
 fhandle.close()
 #Lists-------------------------------------------------------------
 fruits=['banana','apple','pinaple','orange']
@@ -103,8 +103,8 @@ fruits[0]=1 #Lists are mutable
 a=list()
 a.append(1)
 a.append(10)
-print(10 in a)
-print(max(a),min(a),sum(a))
+# print(10 in a)
+# print(max(a),min(a),sum(a))
 # print(a)
 # print(dir(a))
 #DICTIONARIES----------------------------------------------------------------------
@@ -143,43 +143,78 @@ import re
 #same as ..
 hand=open(r'Ammar.txt', 'r', encoding='latin-1')
 i=0
-for line in hand :
-    line = line.rstrip()
+# for line in hand :
+#     line = line.rstrip()
 
-    if line.find('spectre')>0:    #----> string op.
-        print(line,'\t')
-        print(bool(re.search('spectre', line)),'----->regex found or not') #------->equivelent regex
+#     if line.find('spectre')>0:    #----> string op.
+#         print(line,'\t')
+#         print(bool(re.search('spectre', line)),'----->regex found or not') #------->equivelent regex
 
-    if line.startswith('A spectre'): #----> string op.
-        # print(line,'\t')
-        print(bool(re.search('^A spectre',line)),'--->regex start with A spectre') #--------->eq. regex
+#     if line.startswith('A spectre'): #----> string op.
+#         # print(line,'\t')
+#         print(bool(re.search('^A spectre',line)),'--->regex start with A spectre') #--------->eq. regex
 
-    if re.search('^A.*',line):
-        print('line',i,'\t --->this starts with A') #---->regex lines start with A
+#     if re.search('^A.*',line):
+#         print('line',i,'\t --->this starts with A') #---->regex lines start with A
 
-    if re.search('^A\s+',line): #------> + referes to on or more, * referes to 0 or many, \s for spaces \S for non-space
-        print('line',i,'\t this line begins with A followed by a space')
-    if re.search('[0-9]+',line):
-        print('numbers in line',i, 'are:\t',re.findall('[0-9]+', line))
-    if re.search('[AEIOU]',line):
-        print('line',i,'contains A,E,I,O or U')
-        print(re.findall('[AEIOU]',line))
+#     if re.search('^A\s+',line): #------> + referes to on or more, * referes to 0 or many, \s for spaces \S for non-space
+#         print('line',i,'\t this line begins with A followed by a space')
+#     if re.search('[0-9]+',line):
+#         print('numbers in line',i, 'are:\t',re.findall('[0-9]+', line))
+#     if re.search('[AEIOU]',line):
+#         print('line',i,'contains A,E,I,O or U')
+#         print(re.findall('[AEIOU]',line))
 
-    if re.search('b\S+s',line):
-         print(re.findall('b\S+?s',line))
-         print('line',i,': congrats comrade you caught the bourgeois, now send them to gulag ! ! ! ! ! ! ! ! ! ! ! !')
-    if re.search('\sin([^ ]+)',line):
-        print('line',i,' have some words starts with in... ')
-        print(re.findall('\sin(\S+)',line))
-    if re.search('\$[0-9]+',line):
-         print(re.findall('\$[0-9]+'),line) #----------->make the $ sign act normal not a regex
-    print('---------------------------------------------------')
-    i += 1
+#     if re.search('b\S+s',line):
+#          print(re.findall('b\S+?s',line))
+#          print('line',i,': congrats comrade you caught the bourgeois, now send them to gulag ! ! ! ! ! ! ! ! ! ! ! !')
+#     if re.search('\sin([^ ]+)',line):
+#         print('line',i,' have some words starts with in... ')
+#         print(re.findall('\sin(\S+)',line))
+#     if re.search('\$[0-9]+',line):
+#          print(re.findall('\$[0-9]+'),line) #----------->make the $ sign act normal not a regex
+#     print('---------------------------------------------------')
+#     i += 1
 
-print('i=\t',i)
+# print('i=\t',i)
 # ------------------------------------------------------------------------------------------------
+#Objects Oriented......................................................
+class Animal:
+    legs=2
+    type=''
+    name=''
+    #constructor
+    def __init__ (self,x,y,z):
+        self.legs=x
+        self.type=y
+        self.name=z
+    #get
+    def get_attributes(self):
+        print('name: ',self.name,'\n'
+            ,  'type: ',self.type,'\n'
+            ,'num of legs: ',self.legs)
 
+    
+    #deconstructor
+    def __del__ (self):
+        print(" died")
 
+# alex=Animal(4,'dog','Alex')
+# alex.get_attributes()
+national_id=1
+class Human(Animal):
+    id=national_id
+    type='Human'
+    gender=''
+    def __init__(self,x,y):
+        self.name=x
+        self.gender=y
+        
+        call1='he' if self.gender=='m' else 'she'
+        call2='his' if self.gender=='m' else 'her'
+        print('A human created !',call1,'is a ','male' if self.gender=='m' else 'female' ,
+             'and',call2,'name is :',self.name,'>>national id:',self.id)
 
-
+Ammar=Human('Ammar','m')
+Aya=Human('Aya','f')
 
